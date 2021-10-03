@@ -1,3 +1,19 @@
+* [Building the JAR](#building-the-jar)
+  * [Build manually](#build-manually)
+  * [Build via `make`](#build-via-make)
+  * [Build autocomplete](#build-autocomplete)
+* [YAML for config](#yaml-for-config)
+  * [Using the `ConfigLoader`](#using-the-configloader)
+* [ANSI-colored output](#ansi-colored-output)
+* [Testing](#testing)
+  * [Using `TestUtils.testCommand()`](#using-testutilstestcommand)
+  * [Parsing console output](#parsing-console-output)
+  * [Parsing `ProcessBuilder` output](#parsing-processbuilder-output)
+  * [Testing commands which use `ProcessBuilder`](#testing-commands-which-use-processbuilder)
+  * [Turn off ANSI coloring for testing](#turn-off-ansi-coloring-for-testing)
+
+
+
 # Building the JAR
 
 
@@ -25,6 +41,7 @@ java -jar ./target/picotemp-0.1.jar run "pwd | ls -la"
 Running `make build` will run:
 
 ```bash
+mvn -e clean package assembly:single
 mkdir --parents "bin"
 mv "target"/"picotemp".jar "bin"/"picotemp".jar
 mv "target"/"autocomplete.sh" "bin"/"autocomplete.sh"

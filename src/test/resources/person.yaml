@@ -1,0 +1,11 @@
+---
+name: Klaus
+age: 33
+biography: |
+  Klaus is a dude and does things.
+  Sometimes he does this and sometimes something else.
+hobbies:
+ - work in the morning
+ - work in the afternoon
+ - work in the evening
+isAlive: yes
